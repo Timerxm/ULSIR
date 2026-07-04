@@ -6,7 +6,7 @@ Please download iSAID Dataset ([IASID Dataset](https://drive.google.com/file/d/1
 
 Please download LLSD Dataset ([LLSD Dataset](https://pan.baidu.com/s/15jmuwFR5wboHXnmMn9tYBA))(code:c7bh), then place them in the project trainsets directory. 
 
-Please download pre-trained models ([premodel](https://pan.baidu.com/s/1eXYkUluDOUhu-mGMp6ZfMA)(code: k7kx), and then place the `.pth` in the project premodel directory.
+Please download pre-trained models ([premodel](https://pan.baidu.com/s/1eXYkUluDOUhu-mGMp6ZfMA))(code: k7kx), and then place the `.pth` in the project premodel directory.
 
 ## Environment
 ```bash
