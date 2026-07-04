@@ -4,7 +4,7 @@ This repository contains a pytorch implementation for the paper: ULSIR: Dual-Fre
 ## Dataset and Pre-trained Models
 Please download iSAID Dataset ([IASID Dataset](https://drive.google.com/file/d/1mlTTdbqG1ZheaWsBcIjAKDyCdbuAqpvy/view)), then place them in the project trainsets directory. 
 
-Please download pre-trained models ([Baidu Disk](https://pan.baidu.com/s/1eXYkUluDOUhu-mGMp6ZfMA)(code: k7kx), and then place the `.pth` in the project premodel directory.
+Please download pre-trained models ([premodel](https://pan.baidu.com/s/1eXYkUluDOUhu-mGMp6ZfMA)(code: k7kx), and then place the `.pth` in the project premodel directory.
 
 ## Environment
 ```bash
