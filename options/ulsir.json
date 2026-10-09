@@ -1,36 +1,36 @@
 {
-  "task": "loss120"     //  hwfeatt_patch48_x2
-  , "model": "plain" // "plain" | "plain2" if two inputs
-  , "gpu_ids": [6,7]  // [0,1,2,3,4,5,6,7]
+  "task": "ULSIR"     //  
+  , "model": "plain" // 
+  , "gpu_ids": [0,1]  // 
   , "dist": true
 
-  , "scale": 1      // 2 | 3 | 4 | 8
-  , "n_channels": 1  // broadcast to "datasets", 1 for grayscale, 3 for color
+  , "scale": 1      // 
+  , "n_channels": 1  // For the LLSD dataset, the value is set to 1, while for the other datasets, it is set to 3.
 
   , "path": {
-    "root": "new"            // "denoising" | "superresolution" | "dejpeg"
-    , "pretrained_netG":  null// path of pretrained model. We fine-tune X3/X4/X8 models from X2 model, so that `G_optimizer_lr` and `G_scheduler_milestones` can be halved to save time.
+    "root": "new"            // 
+    , "pretrained_netG":  null// path of pretrained model. 
     , "pretrained_netE":  null  // path of pretrained model
   }
 
   , "datasets": {
     "train": {
-      "name": "train_dataset"           // just name
-      , "dataset_type": "sr"         // "dncnn" | "dnpatch" | "fdncnn" | "ffdnet" | "sr" | "srmd" | "dpsr" | "plain" | "plainpatch" | "jpeg" 
-      , "dataroot_H": "/media/user/data/mcg/data/RS/LLRS/train/high"
-      , "dataroot_L": "/media/user/data/mcg/data/RS/LLRS/train/low"             // x2
+      "name": "train_dataset"        // 
+      , "dataset_type": "sr"         // 
+      , "dataroot_H":  ~ // path of H training dataset
+      , "dataroot_L": ~ // replace your training dataset            
 
       , "H_size": 256                   // GT image crop size
 
       , "dataloader_shuffle": true
       , "dataloader_num_workers": 28
-      , "dataloader_batch_size": 20 // 16 32
+      , "dataloader_batch_size": 20 
     }
     , "test": {
-      "name": "test_dataset"            // just name
-      , "dataset_type": "sr"         // "dncnn" | "dnpatch" | "fdncnn" | "ffdnet" | "sr" | "srmd" | "dpsr" | "plain" | "plainpatch" | "jpeg"
-      , "dataroot_H": "/media/user/data/mcg/data/RS/LLRS/train/high"              // path of H testing dataset
-      , "dataroot_L": "/media/user/data/mcg/data/RS/LLRS/val/low"              // path of L testing dataset
+      "name": "test_dataset"         // 
+      , "dataset_type": "sr"         // 
+      , "dataroot_H":                // path of H testing dataset
+      , "dataroot_L":                // path of L testing dataset
 
     }
   }
@@ -41,7 +41,7 @@
   }
 
   , "train": {
-    "G_lossfn_type": "l1"               // "l1" preferred | "l2sum" | "l2" | "ssim" | "charbonnier"
+    "G_lossfn_type": "l1"               // 
     , "G_lossfn_weight": 1.0            // default
 
     , "E_decay": 0.999                  // Exponential Moving Average for netG: set 0 to disable; default setting 0.999
