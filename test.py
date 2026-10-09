@@ -18,11 +18,10 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "5"
 torch.cuda.set_device(0)  # The selected CUDA_VISIBLE_DEVICES entry maps to device index 0.
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model_path', type=str,default='superresolution/fftwave/models/1441_G.pth' \
-    '')
-    parser.add_argument('--save_dir', type=str,default='result/raunyuzhit/')
-    parser.add_argument('--folder_lq', type=str, default='/media/user/data/mcg/data/RS/LLRS/val/low2', help='input low-quality test image folder')
-    parser.add_argument('--folder_gt', type=str, default='/media/user/data/mcg/data/RS/LLRS/val/low2', help='input ground-truth test image folder')
+    parser.add_argument('--model_path', type=str,default='', help='input premodel')
+    parser.add_argument('--save_dir', type=str,default='', help='output image folder')
+    parser.add_argument('--folder_lq', type=str, default='', help='input low-quality test image folder')
+    parser.add_argument('--folder_gt', type=str, default='', help='input ground-truth test image folder')
     args = parser.parse_args()
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -63,7 +62,6 @@ def main():
         
         save_path = f'{save_dir}/{imgname}{imgext}'
         cv2.imwrite(save_path, output)
-        print(f"已保存增强图片至: {save_path}")
 
 def setup(args):
     save_dir = f'{args.save_dir}'
