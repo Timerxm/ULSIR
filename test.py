@@ -6,13 +6,9 @@ from collections import OrderedDict
 import os
 import torch
 import requests
-from models.darkcopy import LowLightEnhancer as net
-#from models.dark import LowLightEnhancer as net
-#from models.retinexFormer import RetinexFormer as net
-#from models.ddfn import DDFN as net
-#from models.darkorg import DarkIR as net  
-from huawei_utils import util_calculate_psnr_ssim as util
-from huawei_utils.utils_modelsummary import  *
+from models.ulsir import LowLightEnhancer as net
+from utils import util_calculate_psnr_ssim as util
+from utils.utils_modelsummary import  *
 import time
 os.environ["CUDA_VISIBLE_DEVICES"] = "5"
 torch.cuda.set_device(0)  # The selected CUDA_VISIBLE_DEVICES entry maps to device index 0.
