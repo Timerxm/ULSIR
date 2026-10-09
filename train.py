@@ -26,7 +26,7 @@ def main(json_path='options/train_msrresnet_psnr.json'):
     # ----------------------------------------
     '''
     parser = argparse.ArgumentParser()
-    parser.add_argument('--opt', type=str, default='options/swinir/weixing.json', help='Path to option JSON file.')
+    parser.add_argument('--opt', type=str, default=None, help='Path to option JSON file.')
     parser.add_argument('--launcher', default='pytorch', help='job launcher')
     parser.add_argument('--local-rank', type=int, default=0)
 
