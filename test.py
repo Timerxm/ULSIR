@@ -18,10 +18,10 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "5"
 torch.cuda.set_device(0)  # The selected CUDA_VISIBLE_DEVICES entry maps to device index 0.
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model_path', type=str,default='', help='input premodel')
-    parser.add_argument('--save_dir', type=str,default='', help='output image folder')
-    parser.add_argument('--folder_lq', type=str, default='', help='input low-quality test image folder')
-    parser.add_argument('--folder_gt', type=str, default='', help='input ground-truth test image folder')
+    parser.add_argument('--model_path', type=str,default=None, help='input premodel')
+    parser.add_argument('--save_dir', type=str,default=None, help='output image folder')
+    parser.add_argument('--folder_lq', type=str, default=None, help='input low-quality test image folder')
+    parser.add_argument('--folder_gt', type=str, default=None, help='input ground-truth test image folder')
     args = parser.parse_args()
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
